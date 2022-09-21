@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet';
-import { Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Layout from './components/Layout/Layout';
+import AppRoutes from './Routes';
 import { GlobalStyled } from './styles/GlobalStyle';
 import { darkTheme, lightTheme } from './styles/theme';
 
@@ -25,9 +25,7 @@ function App() {
         </Helmet>
         <>
           <Layout>
-            <Routes>
-              
-            </Routes>
+            <AppRoutes/>
           </Layout>
         </>
       </ThemeProvider>
