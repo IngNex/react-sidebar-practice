@@ -6,6 +6,11 @@ export const Slayout = styled.div`
     display: flex;
 
 `
-export const Smain = styled.main`
-    padding: calc(${v.xxlSpacing} * 2);
+export const SMain = styled.main`
+    padding: calc(${v.smSpacing} * 2);
+
+    h1{
+        font-size: 14px;
+
+    }
 `

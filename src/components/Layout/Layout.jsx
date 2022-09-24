@@ -1,12 +1,12 @@
 import React from 'react'
 import Sidebar from '../Sidebar/Sidebar'
-import { Slayout, Smain } from './styles'
+import { Slayout, SMain } from './styles'
 
 const Layout = ({children}) => {
     return (
         <Slayout>
             <Sidebar/>
-            <Smain>{children}</Smain>   
+            <SMain>{children}</SMain>   
         </Slayout>
     )
 }
