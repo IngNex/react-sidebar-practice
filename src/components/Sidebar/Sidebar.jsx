@@ -19,13 +19,33 @@ const Sidebar = () => {
         <SLinkContainer>
           <SLink>
             <SLinkIcon></SLinkIcon>
-            <SLinkLabel></SLinkLabel>
-            <SLinkNotification></SLinkNotification>
+            <SLinkLabel>Home</SLinkLabel>
+            <SLinkNotification>5</SLinkNotification>
           </SLink>
         </SLinkContainer>
     </SSidebar>
   )
 }
 
+const linksArray = [
+  {
+    label: "Home",
+    icons: <AiOutlineHome/>,
+    to: "/",
+    notification: 0
+  },
+  {
+    label: "Home",
+    icons: <AiOutlineHome/>,
+    to: "/",
+    notification: 0
+  },
+  {
+    label: "Home",
+    icons: <AiOutlineHome/>,
+    to: "/",
+    notification: 0
+  },
+]
 export default Sidebar;
 

@@ -88,7 +88,14 @@ export const SLinkLabel = styled.span`
     display: block;
     flex: 1;
     margin-left: ${v.smSpacing};
-    
+
 `
 export const SLinkNotification = styled.div`
+    font-size: 14px;
+    padding: calc(${v.smSpacing}/2) ${v.smSpacing};
+    border-radius: calc(${v.borderRadius} / 2);
+    background: ${({theme}) => theme.primary};
+    color: white;
+
+    margin-right: ${v.mdSpacing};
 `
