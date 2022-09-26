@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { btnReset, v } from "../../styles/variables";
@@ -57,13 +58,37 @@ export const SDivider = styled.div`
     background: ${({theme}) => theme.bg3};
     margin: ${v.lgSpacing} 0;
 `
-export const SLink = styled.div`
-`
 export const SLinkContainer = styled.div`
+    background: transparent;
+    border-radius: ${v.borderRadius};
+
+    :hover{
+        box-shadow: inset 0 0 0 1px ${({theme})=> theme.bg3};
+    }
 `
+
+export const SLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    padding: calc(${v.smSpacing}-2px) 0;
+`
+
 export const SLinkIcon = styled.div`
+    padding: ${v.smSpacing} ${v.mdSpacing};
+    display: flex;
+
+    svg{
+        font-size: 20px;
+    }
 `
-export const SLinkLabel = styled.div`
+export const SLinkLabel = styled.span`
+    display: block;
+    flex: 1;
+    margin-left: ${v.smSpacing};
+    
 `
 export const SLinkNotification = styled.div`
 `
