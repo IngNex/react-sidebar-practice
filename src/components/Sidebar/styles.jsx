@@ -117,7 +117,7 @@ export const SThemeToggler = styled.button`
     width: 36px;
     height: 20px;
     border-radius: 10px;
-    background: ${({theme}) => theme.bg3};
+    background: ${({theme, isActive}) => (!isActive ? theme.bg3 : theme.primary)};
 
     position: relative;
 `

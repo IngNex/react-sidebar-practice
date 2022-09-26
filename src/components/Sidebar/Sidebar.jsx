@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from './styles';
 import logo from '../../assets/ingnex.png'
 import {AiOutlineApartment, AiOutlineHome, AiOutlineSearch, AiOutlineSetting} from 'react-icons/ai'
 import {MdLogout, MdOutlineAnalytics} from 'react-icons/md'
 import {BsPeople} from 'react-icons/bs'
+import { ThemeContext } from '../../App';
 
 const Sidebar = () => {
+  const {setTheme, theme} = useContext(ThemeContext)
+
   return (
     <SSidebar>
         <SLogo>
@@ -44,8 +47,8 @@ const Sidebar = () => {
         <SDivider/>
         <STheme>
           <SThemeLabel>Dark Mode</SThemeLabel>
-          <SThemeToggler>
-            <SToggleThumb/>
+          <SThemeToggler isActive={theme === 'dark'} onClick={() => setTheme((p) => p === 'light' ? 'dark' : 'light')}>
+            <SToggleThumb style={theme == 'dark' ? {right: "1px"} : {}}/>
           </SThemeToggler>
         </STheme>
 
