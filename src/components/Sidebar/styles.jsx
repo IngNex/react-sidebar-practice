@@ -11,6 +11,17 @@ export const SSidebar = styled.div`
 
     position: relative;
 `
+export const SSidebarButton = styled.button`
+    ${btnReset};
+    position: absolute;
+    top: ${v.xxlSpacing};
+    right: ${({isOpen}) => isOpen ? '-16px' : '-40px'};
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: ${({theme}) => theme.bg};
+`
+
 export const SLogo = styled.div`
     width: 60px;
     

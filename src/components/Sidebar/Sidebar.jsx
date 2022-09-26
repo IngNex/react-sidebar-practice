@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from './styles';
+import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar, SSidebarButton, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from './styles';
 import logo from '../../assets/ingnex.png'
 import {AiOutlineApartment, AiOutlineHome, AiOutlineSearch, AiOutlineSetting} from 'react-icons/ai'
 import {MdLogout, MdOutlineAnalytics} from 'react-icons/md'
@@ -11,6 +11,11 @@ const Sidebar = () => {
 
   return (
     <SSidebar>
+        <>
+          <SSidebarButton>
+
+          </SSidebarButton>
+        </>
         <SLogo>
             <img src={logo} alt="" />
         </SLogo>
