@@ -1,7 +1,9 @@
 import React from 'react'
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar } from './styles';
 import logo from '../../assets/ingnex.png'
-import {AiOutlineSearch} from 'react-icons/ai'
+import {AiOutlineApartment, AiOutlineSearch} from 'react-icons/ai'
+import {MdOutLineAnalytics} from 'react-icons/md'
+import {BsPeople} from 'react-icons/bs'
 
 const Sidebar = () => {
   return (
@@ -16,13 +18,15 @@ const Sidebar = () => {
           <input type="text" placeholder='Search'/>
         </SSearch>
         <SDivider/>
-        <SLinkContainer>
+        {linksArray.map(({icon, label, notification, to}) => (
+        <SLinkContainer key={label}>
           <SLink>
             <SLinkIcon></SLinkIcon>
             <SLinkLabel>Home</SLinkLabel>
             <SLinkNotification>5</SLinkNotification>
           </SLink>
         </SLinkContainer>
+        ))}
     </SSidebar>
   )
 }
@@ -32,20 +36,25 @@ const linksArray = [
     label: "Home",
     icons: <AiOutlineHome/>,
     to: "/",
-    notification: 0
+    notification: 5
   },
   {
-    label: "Home",
-    icons: <AiOutlineHome/>,
-    to: "/",
-    notification: 0
+    label: "Statistics",
+    icons: <MdOutLineAnalytics/>,
+    to: "/statistics",
+    notification: 3
   },
   {
-    label: "Home",
-    icons: <AiOutlineHome/>,
-    to: "/",
-    notification: 0
-  },
+    label: "Customers",
+    icons: <BsPeople/>,
+    to: "/customers",
+    notification: 2
+  },{
+    label: "Diagrams",
+    icons: <AiOutlineApartment/>,
+    to: "/diagrams",
+    notification: 1
+  }
 ]
 export default Sidebar;
 
