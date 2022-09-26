@@ -99,3 +99,36 @@ export const SLinkNotification = styled.div`
 
     margin-right: ${v.mdSpacing};
 `
+/*============= THEME ============*/
+export const STheme = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 16px; 
+`
+export const SThemeLabel = styled.span`
+    display: block;
+    flex: 1;   
+`
+
+export const SThemeToggler = styled.button`
+    ${btnReset};
+    margin: 0 auto;
+    cursor: pointer;
+    width: 36px;
+    height: 20px;
+    border-radius: 10px;
+    background: ${({theme}) => theme.bg3};
+
+    position: relative;
+`
+export const SToggleThumb = styled.div`
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    transition: .2s ease right;
+    right: calc(100% - 18px - 1px);
+    border-radius: 50%;
+    background: ${({theme}) => theme.bg};
+`

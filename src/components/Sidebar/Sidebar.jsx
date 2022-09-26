@@ -1,8 +1,8 @@
 import React from 'react'
-import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar } from './styles';
+import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from './styles';
 import logo from '../../assets/ingnex.png'
-import {AiOutlineApartment, AiOutlineHome, AiOutlineSearch} from 'react-icons/ai'
-import {MdOutlineAnalytics} from 'react-icons/md'
+import {AiOutlineApartment, AiOutlineHome, AiOutlineSearch, AiOutlineSetting} from 'react-icons/ai'
+import {MdLogout, MdOutlineAnalytics} from 'react-icons/md'
 import {BsPeople} from 'react-icons/bs'
 
 const Sidebar = () => {
@@ -32,6 +32,23 @@ const Sidebar = () => {
         ))}
 
         <SDivider/>
+        {seclinksArray.map(({icon, label}) => (
+        <SLinkContainer key={label}>
+          <SLink>
+            <SLinkIcon>{icon}</SLinkIcon>
+            <SLinkLabel>{label}</SLinkLabel>            
+          </SLink>
+        </SLinkContainer>
+        ))}
+
+        <SDivider/>
+        <STheme>
+          <SThemeLabel>Dark Mode</SThemeLabel>
+          <SThemeToggler>
+            <SToggleThumb/>
+          </SThemeToggler>
+        </STheme>
+
     </SSidebar>
   )
 }
@@ -59,6 +76,16 @@ const linksArray = [
     icon: <AiOutlineApartment/>,
     to: "/diagrams",
     notification: 1
+  }
+]
+
+const seclinksArray = [
+  {
+    label: "Settings",
+    icon: <AiOutlineSetting/>
+  },{
+    label: "Logout",
+    icon: <MdLogout/>
   }
 ]
 export default Sidebar;
