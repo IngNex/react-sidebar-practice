@@ -2,7 +2,7 @@ import React from 'react'
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar } from './styles';
 import logo from '../../assets/ingnex.png'
 import {AiOutlineApartment, AiOutlineSearch} from 'react-icons/ai'
-import {MdOutLineAnalytics} from 'react-icons/md'
+import {MdOutlineAnalytics} from 'react-icons/md'
 import {BsPeople} from 'react-icons/bs'
 
 const Sidebar = () => {
@@ -20,10 +20,10 @@ const Sidebar = () => {
         <SDivider/>
         {linksArray.map(({icon, label, notification, to}) => (
         <SLinkContainer key={label}>
-          <SLink>
-            <SLinkIcon></SLinkIcon>
-            <SLinkLabel>Home</SLinkLabel>
-            <SLinkNotification>5</SLinkNotification>
+          <SLink to={to}>
+            <SLinkIcon>{icon}</SLinkIcon>
+            <SLinkLabel>{label}</SLinkLabel>
+            <SLinkNotification>{notification}</SLinkNotification>
           </SLink>
         </SLinkContainer>
         ))}
@@ -40,7 +40,7 @@ const linksArray = [
   },
   {
     label: "Statistics",
-    icons: <MdOutLineAnalytics/>,
+    icons: <MdOutlineAnalytics/>,
     to: "/statistics",
     notification: 3
   },
