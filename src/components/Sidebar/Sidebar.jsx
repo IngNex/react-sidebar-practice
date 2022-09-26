@@ -1,7 +1,7 @@
 import React from 'react'
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLogo, SSearch, SSearchIcon, SSidebar } from './styles';
 import logo from '../../assets/ingnex.png'
-import {AiOutlineApartment, AiOutlineSearch} from 'react-icons/ai'
+import {AiOutlineApartment, AiOutlineHome, AiOutlineSearch} from 'react-icons/ai'
 import {MdOutlineAnalytics} from 'react-icons/md'
 import {BsPeople} from 'react-icons/bs'
 
@@ -23,10 +23,15 @@ const Sidebar = () => {
           <SLink to={to}>
             <SLinkIcon>{icon}</SLinkIcon>
             <SLinkLabel>{label}</SLinkLabel>
-            <SLinkNotification>{notification}</SLinkNotification>
+            {
+              !!notification && <SLinkNotification>{notification}</SLinkNotification>
+            }
+            
           </SLink>
         </SLinkContainer>
         ))}
+
+        <SDivider/>
     </SSidebar>
   )
 }
@@ -34,24 +39,24 @@ const Sidebar = () => {
 const linksArray = [
   {
     label: "Home",
-    icons: <AiOutlineHome/>,
+    icon: <AiOutlineHome/>,
     to: "/",
-    notification: 5
+    notification: 0
   },
   {
     label: "Statistics",
-    icons: <MdOutlineAnalytics/>,
+    icon: <MdOutlineAnalytics/>,
     to: "/statistics",
     notification: 3
   },
   {
     label: "Customers",
-    icons: <BsPeople/>,
+    icon: <BsPeople/>,
     to: "/customers",
-    notification: 2
+    notification: 0
   },{
     label: "Diagrams",
-    icons: <AiOutlineApartment/>,
+    icon: <AiOutlineApartment/>,
     to: "/diagrams",
     notification: 1
   }
